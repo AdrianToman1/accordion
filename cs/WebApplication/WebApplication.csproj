@@ -11,12 +11,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\HTMLInterpreter\HTMLInterpreter.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <None Update="test.html">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
+    <ProjectReference Include="..\HTMLRepo\HTMLRepo.csproj" />
   </ItemGroup>
 
 </Project>

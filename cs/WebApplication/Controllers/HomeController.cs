@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
+using HTMLInterpreter;
+using HTMLRepo;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Net.Http.Headers;
 using WebApplication.Models;
@@ -13,12 +15,10 @@ namespace WebApplication.Controllers
     {
         public IActionResult Index()
         {
-            var path = @"test.html";
-
-            HTMLInterpreter.HTMLInterpreter htmlInterpreter = new HTMLInterpreter.HTMLInterpreter();
-
+            IHTMLInterpreter htmlInterpreter = new HTMLInterpreter.HTMLInterpreter();
+            IHTMLRepo htmlRepo = new HTMLRepo.HTMLRepo();
             
-            return Content(htmlInterpreter.ApplyPermissions(System.IO.File.ReadAllText(path)), "text/html");
+            return Content(htmlInterpreter.ApplyPermissions(htmlRepo.GetHTMLPage("test.html")), "text/html");
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
