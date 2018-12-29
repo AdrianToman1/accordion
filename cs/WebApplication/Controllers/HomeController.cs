@@ -13,14 +13,6 @@ namespace WebApplication.Controllers
 {
     public class HomeController : Controller
     {
-        public IActionResult Index()
-        {
-            IHTMLInterpreter htmlInterpreter = new HTMLInterpreter.HTMLInterpreter();
-            IHTMLRepo htmlRepo = new HTMLRepo.HTMLRepo();
-            
-            return Content(htmlInterpreter.ApplyPermissions(htmlRepo.GetHTMLPage("test.html")), "text/html");
-        }
-
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {
