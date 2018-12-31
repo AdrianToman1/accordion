@@ -1,4 +1,4 @@
-﻿namespace HTMLRepo
+﻿namespace Common
 {
     public interface IHTMLRepo
     {
