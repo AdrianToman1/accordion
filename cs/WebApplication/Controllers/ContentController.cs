@@ -11,12 +11,9 @@ namespace WebApplication.Controllers
             IHTMLInterpreter htmlInterpreter = new HTMLInterpreter.HTMLInterpreter();
             IHTMLRepo htmlRepo = new HTMLRepo.HTMLRepo();
 
-            string html = htmlRepo.GetHTMLPage(id + ".html");
+            var html = htmlRepo.GetHTMLPage(id + ".html");
 
-            if (string.IsNullOrWhiteSpace(html))
-            {
-                return NotFound();
-            }
+            if (string.IsNullOrWhiteSpace(html)) return NotFound();
 
             return Content(htmlInterpreter.ApplyPermissions(html), "text/html");
         }
