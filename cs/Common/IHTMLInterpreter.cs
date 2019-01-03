@@ -1,4 +1,4 @@
-﻿namespace HTMLInterpreter
+﻿namespace Common
 {
     public interface IHTMLInterpreter
     {
