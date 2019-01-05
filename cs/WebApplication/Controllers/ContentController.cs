@@ -9,8 +9,8 @@ namespace WebApplication.Controllers
     {
         public IActionResult Index(string id)
         {
-            IHTMLInterpreter htmlInterpreter = new HTMLInterpreter.HTMLInterpreter();
-            IHTMLRepo htmlRepo = new HTMLRepo.HTMLRepo();
+            IHTMLInterpreter htmlInterpreter = new HtmlAgilityPackInterpreter();
+            IHTMLRepo htmlRepo = new FileSystemRepo();
 
             var html = htmlRepo.GetHTMLPage(id + ".html");
 
