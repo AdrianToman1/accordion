@@ -3,7 +3,7 @@ using HtmlAgilityPack;
 
 namespace HTMLInterpreter
 {
-    public class HTMLInterpreter : IHTMLInterpreter
+    public class HtmlAgilityPackInterpreter : IHTMLInterpreter
     {
         public string ApplyPermissions(string html)
         {
