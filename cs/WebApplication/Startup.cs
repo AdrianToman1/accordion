@@ -47,14 +47,15 @@ namespace WebApplication
             app.UseStaticFiles();
             app.UseCookiePolicy();
 
-            app.UseMvc(routes =>
+            app.UseRouting();
+            app.UseEndpoints(endpoints =>
             {
-                routes.MapRoute(
+                endpoints.MapControllerRoute(
                     name: "content",
-                    template: "c/{id}",
+                    pattern: "c/{id}",
                     defaults: new { controller = "Content", action = "Index" });
 
-                routes.MapRoute(
+                endpoints.MapControllerRoute(
                     "default",
                     "{controller=Home}/{action=Index}/{id?}");
             });
