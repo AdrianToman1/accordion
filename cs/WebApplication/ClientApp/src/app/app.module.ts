@@ -8,9 +8,8 @@ import { AppComponent } from './app.component';
 import { ResultsComponent } from './results.component';
 import { LandingPageComponent } from './landing-page/landing-page.component';
 import { NavMenuComponent } from './nav-menu/nav-menu.component';
-import { HomeComponent } from './home/home.component';
-import { CounterComponent } from './counter/counter.component';
-import { FetchDataComponent } from './fetch-data/fetch-data.component';
+import { SearchResultsComponent } from './search-results/search-results.component';
+import { HtmlContentComponent } from './html-content/html-content.component';
 
 @NgModule({
   declarations: [
@@ -18,9 +17,8 @@ import { FetchDataComponent } from './fetch-data/fetch-data.component';
     ResultsComponent,
     LandingPageComponent,
     NavMenuComponent,
-    HomeComponent,
-    CounterComponent,
-    FetchDataComponent
+    SearchResultsComponent,
+    HtmlContentComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -29,24 +27,17 @@ import { FetchDataComponent } from './fetch-data/fetch-data.component';
     RouterModule.forRoot([
       { path: '', component: LandingPageComponent, pathMatch: 'full' },
       {
-        path: "counter",
+        path: "search",
         component: ResultsComponent,
         children: [
-          { path: '', component: CounterComponent }
+          { path: '', component: SearchResultsComponent }
         ]
       },
       {
-        path: "fetch-data",
+        path: "html-content",
         component: ResultsComponent,
         children: [
-          { path: '', component: FetchDataComponent }
-        ]
-      },
-      {
-        path: "**",
-        component: ResultsComponent,
-        children: [
-          { path: '', component: HomeComponent }
+          { path: '', component: HtmlContentComponent }
         ]
       }
     ])
