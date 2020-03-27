@@ -8,9 +8,6 @@ import { AppComponent } from './app.component';
 import { ResultsComponent } from './results.component';
 import { LandingPageComponent } from './landing-page/landing-page.component';
 import { NavMenuComponent } from './nav-menu/nav-menu.component';
-import { HomeComponent } from './home/home.component';
-import { CounterComponent } from './counter/counter.component';
-import { FetchDataComponent } from './fetch-data/fetch-data.component';
 import { SearchResultsComponent } from './search-results/search-results.component';
 import { HtmlContentComponent } from './html-content/html-content.component';
 
@@ -20,9 +17,6 @@ import { HtmlContentComponent } from './html-content/html-content.component';
     ResultsComponent,
     LandingPageComponent,
     NavMenuComponent,
-    HomeComponent,
-    CounterComponent,
-    FetchDataComponent,
     SearchResultsComponent,
     HtmlContentComponent
   ],
@@ -44,27 +38,6 @@ import { HtmlContentComponent } from './html-content/html-content.component';
         component: ResultsComponent,
         children: [
           { path: '', component: HtmlContentComponent }
-        ]
-      },
-      {
-        path: "counter",
-        component: ResultsComponent,
-        children: [
-          { path: '', component: CounterComponent }
-        ]
-      },
-      {
-        path: "fetch-data",
-        component: ResultsComponent,
-        children: [
-          { path: '', component: FetchDataComponent }
-        ]
-      },
-      {
-        path: "**",
-        component: ResultsComponent,
-        children: [
-          { path: '', component: HomeComponent }
         ]
       }
     ])
