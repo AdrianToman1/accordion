@@ -11,6 +11,8 @@ import { NavMenuComponent } from './nav-menu/nav-menu.component';
 import { HomeComponent } from './home/home.component';
 import { CounterComponent } from './counter/counter.component';
 import { FetchDataComponent } from './fetch-data/fetch-data.component';
+import { SearchResultsComponent } from './search-results/search-results.component';
+import { HtmlContentComponent } from './html-content/html-content.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +22,9 @@ import { FetchDataComponent } from './fetch-data/fetch-data.component';
     NavMenuComponent,
     HomeComponent,
     CounterComponent,
-    FetchDataComponent
+    FetchDataComponent,
+    SearchResultsComponent,
+    HtmlContentComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -28,6 +32,20 @@ import { FetchDataComponent } from './fetch-data/fetch-data.component';
     FormsModule,
     RouterModule.forRoot([
       { path: '', component: LandingPageComponent, pathMatch: 'full' },
+      {
+        path: "search",
+        component: ResultsComponent,
+        children: [
+          { path: '', component: SearchResultsComponent }
+        ]
+      },
+      {
+        path: "html-content",
+        component: ResultsComponent,
+        children: [
+          { path: '', component: HtmlContentComponent }
+        ]
+      },
       {
         path: "counter",
         component: ResultsComponent,

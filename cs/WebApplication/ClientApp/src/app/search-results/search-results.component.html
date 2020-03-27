@@ -1,0 +1,6 @@
+<h1>Results</h1>
+<div *ngFor="let searchResult of searchResults">
+  <h2><a href="{{ searchResult.url }}">{{ searchResult.title }}</a></h2>
+  <div>{{ searchResult.url }}</div>
+  <div>{{ searchResult.description }}</div>
+</div>
